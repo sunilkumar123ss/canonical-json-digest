@@ -1,0 +1,8 @@
+{
+  "slug": "canonical-json-digest",
+  "title": "Canonical JSON Digest",
+  "description": "Produce consistent local JSON bytes and content hashes from strict input.",
+  "category": "backend",
+  "demo_args": [],
+  "expected_exit": 0
+}
