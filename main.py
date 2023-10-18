@@ -16,3 +16,43 @@ def _object(pairs):
 
 def _invalid_constant(value):
     raise ValueError("non-finite JSON number: " + value)
+
+
+def loads_strict(text):
+    value = json.loads(text, object_pairs_hook=_object, parse_constant=_invalid_constant)
+    canonical_bytes(value)
+    return value
+
+
+def canonical_bytes(value):
+    active = set()
+    def validate(item):
+        if item is None or type(item) in (str, bool, int):
+            return
+        if type(item) is float:
+            if not math.isfinite(item):
+                raise ValueError("numbers must be finite")
+            return
+        if type(item) not in (list, dict):
+            raise ValueError("only JSON values are supported")
+        identity = id(item)
+        if identity in active:
+            raise ValueError("circular references are not JSON")
+        active.add(identity)
+        try:
+            if type(item) is dict:
+                if any(type(key) is not str for key in item):
+                    raise ValueError("object keys must be strings")
+                children = item.values()
+            else:
+                children = item
+            for child in children:
+                validate(child)
+        finally:
+            active.remove(identity)
+    validate(value)
+    try:
+        return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False,
+                          allow_nan=False).encode("utf-8")
+    except UnicodeEncodeError as exc:
+        raise ValueError("strings must be valid Unicode without lone surrogates") from exc
