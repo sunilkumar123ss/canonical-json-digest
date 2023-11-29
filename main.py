@@ -56,3 +56,7 @@ def canonical_bytes(value):
                           allow_nan=False).encode("utf-8")
     except UnicodeEncodeError as exc:
         raise ValueError("strings must be valid Unicode without lone surrogates") from exc
+
+
+def digest(value):
+    return hashlib.sha256(canonical_bytes(value)).hexdigest()

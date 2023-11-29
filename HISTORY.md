@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 4 of 19. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 5 of 19. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -16,7 +16,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 2 | 2023-06-20T17:28:35+05:30 | add module imports, constants, and scope documentation (present) |
 | 3 | 2023-07-16T09:26:29+05:30 | reject duplicate JSON keys and non-finite parser constants (present) |
 | 4 | 2023-10-18T11:02:17+05:30 | validate JSON values and produce deterministic UTF-8 bytes (present) |
-| 5 | 2023-11-29T15:13:24+05:30 | derive SHA-256 content digests from canonical bytes (later stage) |
+| 5 | 2023-11-29T15:13:24+05:30 | derive SHA-256 content digests from canonical bytes (present) |
 | 6 | 2024-06-17T10:00:13+05:30 | add the deterministic demonstration and command-line entry point (later stage) |
 | 7 | 2024-08-09T14:49:28+05:30 | test object order and whitespace do not change digest (later stage) |
 | 8 | 2024-10-02T12:09:35+05:30 | test array order matters (later stage) |
