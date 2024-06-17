@@ -60,3 +60,19 @@ def canonical_bytes(value):
 
 def digest(value):
     return hashlib.sha256(canonical_bytes(value)).hexdigest()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--json", dest="json_text", default='{"tags":["api","lab"],"name":"Synthetic order","quantity":2}',
+                        help="JSON value to serialize and hash; duplicate keys are rejected")
+    args = parser.parse_args()
+    try:
+        value = loads_strict(args.json_text)
+    except (ValueError, RecursionError) as exc:
+        parser.error(str(exc))
+    print(json.dumps({"canonical": canonical_bytes(value).decode("utf-8"), "sha256": digest(value)}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
