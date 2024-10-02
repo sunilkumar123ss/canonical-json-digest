@@ -10,6 +10,8 @@ class CanonicalJSONTests(unittest.TestCase):
         self.assertEqual(digest(left), digest(right))
         self.assertEqual(canonical_bytes(left), b'{"a":{"y":1,"z":0},"b":2}')
 
+    def test_array_order_matters(self):
+        self.assertNotEqual(digest([1, 2]), digest([2, 1]))
 
 
 
