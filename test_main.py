@@ -13,6 +13,9 @@ class CanonicalJSONTests(unittest.TestCase):
     def test_array_order_matters(self):
         self.assertNotEqual(digest([1, 2]), digest([2, 1]))
 
+    def test_duplicate_keys_rejected_at_any_depth(self):
+        for text in ('{"a":1,"a":2}', '{"outer":{"x":1,"x":2}}'):
+            with self.subTest(text=text), self.assertRaises(ValueError): loads_strict(text)
 
 
 

@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 8 of 19. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 9 of 19. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -20,7 +20,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 6 | 2024-06-17T10:00:13+05:30 | add the deterministic demonstration and command-line entry point (present) |
 | 7 | 2024-08-09T14:49:28+05:30 | test object order and whitespace do not change digest (present) |
 | 8 | 2024-10-02T12:09:35+05:30 | test array order matters (present) |
-| 9 | 2024-10-05T18:29:52+05:30 | test duplicate keys rejected at any depth (later stage) |
+| 9 | 2024-10-05T18:29:52+05:30 | test duplicate keys rejected at any depth (present) |
 | 10 | 2024-10-26T19:44:36+05:30 | test nonfinite numbers rejected (later stage) |
 | 11 | 2024-11-21T14:20:51+05:30 | test non json values and keys rejected (later stage) |
 | 12 | 2024-12-11T10:00:57+05:30 | test utf8 and digest known bytes (later stage) |
