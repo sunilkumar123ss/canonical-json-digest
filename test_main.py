@@ -17,6 +17,10 @@ class CanonicalJSONTests(unittest.TestCase):
         for text in ('{"a":1,"a":2}', '{"outer":{"x":1,"x":2}}'):
             with self.subTest(text=text), self.assertRaises(ValueError): loads_strict(text)
 
+    def test_nonfinite_numbers_rejected(self):
+        for text in ('NaN', 'Infinity', '-Infinity', '1e999'):
+            with self.subTest(text=text), self.assertRaises(ValueError): loads_strict(text)
+        with self.assertRaises(ValueError): canonical_bytes(float('nan'))
 
 
 
