@@ -22,6 +22,9 @@ class CanonicalJSONTests(unittest.TestCase):
             with self.subTest(text=text), self.assertRaises(ValueError): loads_strict(text)
         with self.assertRaises(ValueError): canonical_bytes(float('nan'))
 
+    def test_non_json_values_and_keys_rejected(self):
+        for value in ({1: "value"}, {"x": (1, 2)}, {"x": {1, 2}}):
+            with self.subTest(value=value), self.assertRaises(ValueError): canonical_bytes(value)
 
 
 
