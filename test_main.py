@@ -26,6 +26,10 @@ class CanonicalJSONTests(unittest.TestCase):
         for value in ({1: "value"}, {"x": (1, 2)}, {"x": {1, 2}}):
             with self.subTest(value=value), self.assertRaises(ValueError): canonical_bytes(value)
 
+    def test_utf8_and_digest_known_bytes(self):
+        expected = '{"city":"M\u00fcnchen"}'.encode('utf-8')
+        self.assertEqual(canonical_bytes({"city": "M\u00fcnchen"}), expected)
+        self.assertEqual(digest({"city": "M\u00fcnchen"}), hashlib.sha256(expected).hexdigest())
 
 
 
