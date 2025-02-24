@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 12 of 19. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 13 of 19. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -24,7 +24,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 10 | 2024-10-26T19:44:36+05:30 | test nonfinite numbers rejected (present) |
 | 11 | 2024-11-21T14:20:51+05:30 | test non json values and keys rejected (present) |
 | 12 | 2024-12-11T10:00:57+05:30 | test utf8 and digest known bytes (present) |
-| 13 | 2025-02-24T12:28:12+05:30 | test cycles rejected but reused children allowed (later stage) |
+| 13 | 2025-02-24T12:28:12+05:30 | test cycles rejected but reused children allowed (present) |
 | 14 | 2025-04-07T14:04:55+05:30 | test lone surrogates rejected (later stage) |
 | 15 | 2025-05-16T09:06:27+05:30 | test float and integer remain distinct (later stage) |
 | 16 | 2025-07-16T09:54:57+05:30 | add isolated tests, demo, and help verification (later stage) |

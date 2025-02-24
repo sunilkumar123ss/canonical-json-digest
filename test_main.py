@@ -31,6 +31,11 @@ class CanonicalJSONTests(unittest.TestCase):
         self.assertEqual(canonical_bytes({"city": "M\u00fcnchen"}), expected)
         self.assertEqual(digest({"city": "M\u00fcnchen"}), hashlib.sha256(expected).hexdigest())
 
+    def test_cycles_rejected_but_reused_children_allowed(self):
+        cycle = []; cycle.append(cycle)
+        with self.assertRaises(ValueError): canonical_bytes(cycle)
+        child = [1]
+        self.assertEqual(canonical_bytes([child, child]), b'[[1],[1]]')
 
 
 
