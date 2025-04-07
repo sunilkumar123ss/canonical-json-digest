@@ -37,6 +37,8 @@ class CanonicalJSONTests(unittest.TestCase):
         child = [1]
         self.assertEqual(canonical_bytes([child, child]), b'[[1],[1]]')
 
+    def test_lone_surrogates_rejected(self):
+        with self.assertRaises(ValueError): canonical_bytes("\ud800")
 
 
 
