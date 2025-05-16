@@ -40,6 +40,8 @@ class CanonicalJSONTests(unittest.TestCase):
     def test_lone_surrogates_rejected(self):
         with self.assertRaises(ValueError): canonical_bytes("\ud800")
 
+    def test_float_and_integer_remain_distinct(self):
+        self.assertNotEqual(digest(1), digest(1.0))
 
 
 if __name__ == '__main__':
